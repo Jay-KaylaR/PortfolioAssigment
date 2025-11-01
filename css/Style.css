@@ -1,0 +1,183 @@
+
+#about {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-in-out;
+}
+#about.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====== GRID SYSTEM ====== */
+#grid-container {
+    display: grid;
+    grid-template-areas:
+        'n n n n'
+        'm m m m'
+        'f f f f';
+    gap: 15px;
+    padding: 15px;
+}
+
+/* Assign grid areas */
+#navbar { grid-area: n; }
+#mainContent { grid-area: m; }
+#footer { grid-area: f; }
+
+/* ====== BASIC LAYOUT ====== */
+body {
+    background: #f9fafb;
+    font-family: "Poppins", sans-serif;
+    color: #001219;
+}
+
+/* ==== Background Styling ==== */
+body {
+  background-color: #f4f6f8;
+  background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png');
+  background-repeat: repeat;
+  background-attachment: fixed;
+  color: #212529;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Optional: make main sections stand out */
+section, .card, footer {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin: 20px auto;
+  padding: 20px;
+}
+
+#mainContent {
+    min-height: 400px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ====== FLEX CONTAINER ====== */
+#flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+
+.center-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center-box img {
+    width: 180px;
+    border-radius: 50%;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* ====== NAVBAR ENHANCEMENTS ====== */
+.navbar-nav .nav-link {
+    color: #fff;
+    font-weight: 500;
+}
+.navbar-nav .nav-link:hover {
+    color: #f4a261;
+}
+.navbar.scrolled {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+}
+
+/* ====== SKILL BARS ====== */
+.skill-bar {
+    margin: 15px 0;
+}
+.skill-bar span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.skill-bar .bar {
+    height: 12px;
+    background: #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+.skill-bar .bar::after {
+    content: "";
+    position: absolute;
+    left: 0; top: 0;
+    height: 100%;
+    width: 0;
+    transition: width 1s ease;
+}
+.bar.html::after { width: 95%; background: #f97316; }
+.bar.css::after { width: 90%; background: #3b82f6; }
+.bar.js::after { width: 80%; background: #facc15; }
+.bar.git::after { width: 85%; background: #22c55e; }
+
+/* ====== ABOUT SECTION ====== */
+.about-img {
+    width: 180px;
+    border-radius: 50%;
+    border: 3px solid #0a9396;
+    margin-bottom: 10px;
+}
+
+/* ====== MEDIA QUERIES ====== */
+@media screen and (max-width: 768px) {
+    #grid-container {
+        grid-template-areas:
+            'n n n n'
+            'm m m m'
+            'f f f f';
+    }
+    #navbar {
+        border-radius: 0;
+    }
+}
+
+/* Project Card Hover Effect */
+.project-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 15px;
+}
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+.project-card img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 220px;
+  object-fit: cover;
+}
+
+.project-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-in-out;
+}
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+#contactForm button:hover {
+  background-color: #0056b3;
+}
+
+#footer a:hover {
+  color: #0dcaf0;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
